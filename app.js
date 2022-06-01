@@ -43,6 +43,7 @@ randomFact();
 /*------------JS Challenge --------------*/
 const titanId = ['2', '5', '6', '7', '8', '9', '10', '11', '12'];
 let imgAdded = false;
+document.getElementById('target-quote').innerHTML = 'Titan name goes here!';
 document.getElementById('target-button').addEventListener('click', () => {
     let id = randomIdGenerator();
     console.log(id);
@@ -72,7 +73,21 @@ async function assignTitanInfo(titanInfo,displayObj) {
     return displayObj;
 }
 async function addToHtml (displayObj) {
+    if (imgAdded){
+        document.querySelector('.titan-picture').remove();
+    }
+    let parent = document.getElementById('container-challenge');
     let nameTag = document.getElementById('target-quote');
-    nameTag.innerHtml = displayObj.name;
+    nameTag.innerText = displayObj.name;
+    let imgTag = createElement('img','titan-picture');
+    imgTag.height = 200;
+    imgTag.src = displayObj.imgUrl;
+    imgAdded = true;
+    parent.appendChild(imgTag);
 
+}
+const createElement = (el , className) => {
+    let element = document.createElement(el);
+    element.setAttribute('class' , className);
+    return element
 }
