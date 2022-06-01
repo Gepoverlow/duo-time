@@ -32,6 +32,11 @@
   border-radius: 50%;
 }
 
+#container-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 #container-info {
   position: relative;
   display: flex;
@@ -46,6 +51,7 @@
   background-position: center;
   object-fit: cover;
   border-bottom: 5px solid black;
+  border-right: 2.5px solid black;
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
   font-size: clamp(0.5rem, 5vw, 1.2rem);
 }
@@ -60,8 +66,19 @@
   background-color: rgb(212, 32, 32);
 }
 
+#container-fun-facts {
+  background-image: url("./aot-fun-facts.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 5px solid black;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+  font-size: clamp(0.5rem, 5vw, 1.2rem);
+  border-left: 2.5px solid black;
+}
+
 #container-challenge {
-  min-height: 100vh;
+  max-height: 100vh;
   width: 100%;
   background-image: url("./aot-bg2.jpg");
   background-repeat: no-repeat;
@@ -70,4 +87,17 @@
   object-fit: cover;
   color: beige;
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+}
+
+#target-title {
+  padding: 1em;
+}
+
+#target-button {
+  cursor: pointer;
+}
+
+#target-quote {
+  text-align: center;
+  padding: 5em;
 }
