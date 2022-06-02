@@ -80,7 +80,10 @@ async function addToHtml (displayObj) {
     let nameTag = document.getElementById('target-quote');
     nameTag.innerText = displayObj.name;
     let imgTag = createElement('img','titan-picture');
-    imgTag.height = 200;
+    imgTag.height = 250;
+    parent.style.display = 'flex';
+    imgTag.style.margin = '0 auto';
+    parent.style.flexDirection = 'column';
     imgTag.src = displayObj.imgUrl;
     imgAdded = true;
     parent.appendChild(imgTag);
@@ -91,3 +94,23 @@ const createElement = (el , className) => {
     element.setAttribute('class' , className);
     return element
 }
+/*----------edit the html with right information----------*/
+let infoTags = document.querySelectorAll('.info>p');
+let myAnswers = ['blue', 'koala', 'It is swimming! Lucas got it right!','Levi Ackerman','park bo-gum'];
+const theHoverEffect = (p , myAnswer , org )=>{
+    p.addEventListener('mouseover',() => {
+        p.innerText = org;
+    })
+    p.addEventListener('mouseout', () => {
+        p.innerText = myAnswer;
+    })
+}
+const fixInfo = (p , myAnswer) => {
+    let org = p.innerHTML;
+    theHoverEffect(p , myAnswer , org );
+    p.innerText = myAnswer;
+}
+for (let i = 0 ; i < infoTags.length; i ++){
+    fixInfo(infoTags[i],myAnswers[i]);
+}
+/*-------------*/
