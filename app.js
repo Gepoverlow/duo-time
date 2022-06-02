@@ -113,4 +113,6 @@ const fixInfo = (p , myAnswer) => {
 for (let i = 0 ; i < infoTags.length; i ++){
     fixInfo(infoTags[i],myAnswers[i]);
 }
-/*-------------*/
+/*------3 word description-------*/
+let descripTag = document.querySelector('#container-description>p');
+fixInfo( descripTag , 'honest , movie -tv shows- manga - kdrama - ...  addict! , cheerful');
