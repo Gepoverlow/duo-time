@@ -66,7 +66,8 @@
   background-color: rgb(212, 32, 32);
 }
 
-#creator-link {
+#creator-link,
+#created-for {
   text-decoration: none;
   color: inherit;
 }
